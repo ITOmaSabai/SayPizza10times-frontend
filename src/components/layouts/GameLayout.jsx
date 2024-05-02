@@ -154,8 +154,14 @@ export function GameLayout() {
     }
   };
 
-  const handleModalOpen = () => {
-
+  const handleClick = () => {
+    if (correctCount < 4) {
+      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！やーいやーいw%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+    } else if (correctCount < 9) {
+      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！なかなかやるね！😜%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+    } else {
+      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問全問正解！天才かよ！？👀%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+    }
   }
 
   return (
@@ -166,7 +172,8 @@ export function GameLayout() {
           <Box sx={styleForQuizFailure}></Box>
           <Typography variant='h5'>正解数：{correctCount}問</Typography>
           <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
-          <Button onClick={handleModalOpen}>ランキング登録</Button>
+          <Button onClick={handleClick} >Xにポストする</Button>
+
         </Box>
       ) : (
         <>
@@ -176,7 +183,7 @@ export function GameLayout() {
               <Box sx={styleForQuizCompleted}></Box>
               <Typography variant='h5'>やるじゃん</Typography>
               <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
-              <Button onClick={handleModalOpen}>ランキング登録</Button>
+              <Button onClick={handleClick} >Xにポストする</Button>
             </Box>
           ) : (
             // <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh", backgroundImage: "url('/smile.png')"}}>

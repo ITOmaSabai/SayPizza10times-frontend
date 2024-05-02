@@ -193,5 +193,3 @@ export function GameLayout() {
     </div>
   );
 }
-
-export default QuizGame;

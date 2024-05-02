@@ -7,7 +7,7 @@ export const AppRoutes = () => {
     <Routes>
       <Route>
         <Route path="/" element={<HeroLayout />} />
-        <Route path="/spots" element={<GameLayout />} />
+        <Route path="/game" element={<GameLayout />} />
       </Route>
     </Routes>
   )

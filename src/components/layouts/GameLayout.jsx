@@ -80,18 +80,42 @@ export function GameLayout() {
       optionA: "ピザ",
       optionB: "ヒザ"
     },
-    // {
-    //   imageUrl: "path/to/image2.jpg",
-    //   correctOption: 'B',
-    //   optionA: "バナナ",
-    //   optionB: "サル"
-    // },
-    // {
-    //   imageUrl: "path/to/image2.jpg",
-    //   correctOption: 'B',
-    //   optionA: "バナナ",
-    //   optionB: "サル"
-    // },
+    {
+      imageUrl: "/q7.jpeg",
+      correctOption: 'B',
+      optionA: "ピザ",
+      optionB: "ビザ"
+    },
+    {
+      imageUrl: "/q8.jpeg",
+      correctOption: 'A',
+      optionA: "キザ",
+      optionB: "ヒザ"
+    },
+    {
+      imageUrl: "/q4.webp",
+      correctOption: 'A',
+      optionA: "フリーザ",
+      optionB: "ピザーラ"
+    },
+    {
+      imageUrl: "/q6.png",
+      correctOption: 'B',
+      optionA: "ピイザ",
+      optionB: "パイザ"
+    },
+    {
+      imageUrl: "/q5.jpeg",
+      correctOption: 'A',
+      optionA: "ヒダ",
+      optionB: "キザ"
+    },
+    {
+      imageUrl: "/q9.png",
+      correctOption: 'A',
+      optionA: "上座",
+      optionB: "上野"
+    },
 
   ];
 
@@ -159,7 +183,7 @@ export function GameLayout() {
             <Box sx={styleForQuiz}>
               <Typography variant='h3' >これは？</Typography>
               <Box width="200px" height="200px" >
-                <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', objectFit: 'cover' }} />
               </Box>
               <Box >
                 {isCorrect === true && <Alert variant="outlined" severity="success" >正解！！！</Alert>}

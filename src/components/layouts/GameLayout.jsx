@@ -1,5 +1,6 @@
 import { Alert, Box, Button, Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const styleForQuizFailure = {
   backgroundImage: "url('/Hero.png')",
@@ -58,6 +59,7 @@ export function GameLayout() {
   const [ correctCount, setCorrectCount ] = useState(0);
   const [ isCorrect, setIsCorrect ] = useState(null);
   const [ isDisabled, setIsDisabled ] = useState(false);
+  const navigate = useNavigate();
 
   const questions = [
     {
@@ -140,7 +142,7 @@ export function GameLayout() {
           <Typography variant='h5'>やーいひっかかった！</Typography>
           <Box sx={styleForQuizFailure}></Box>
           <Typography variant='h5'>正解数：{correctCount}問</Typography>
-          <Button onClick={()=> window.location.reload()} >もう一度！</Button>
+          <Button onClick={()=> navigate('/')} >もう一度！</Button>
           <Button onClick={handleModalOpen}>ランキング登録</Button>
         </Box>
       ) : (
@@ -150,7 +152,7 @@ export function GameLayout() {
               <Typography variant='h5'>全問正解🎉 ({correctCount}問正解)</Typography>
               <Box sx={styleForQuizCompleted}></Box>
               <Typography variant='h5'>やるじゃん</Typography>
-              <Button onClick={()=> window.location.reload()} >もう一度！</Button>
+              <Button onClick={()=> navigate('/')} >もう一度！</Button>
               <Button onClick={handleModalOpen}>ランキング登録</Button>
             </Box>
           ) : (

@@ -53,7 +53,7 @@ const styleForFooter = {
 
 export function GameLayout() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [timer, setTimer] = useState(5); // 5秒制限
+  const [timer, setTimer] = useState(3); // 5秒制限
   const [gameOver, setGameOver] = useState(false);
   const [gameCompleted, setGameCompleted] = useState(false);
   const [ correctCount, setCorrectCount ] = useState(0);
@@ -80,18 +80,42 @@ export function GameLayout() {
       optionA: "ピザ",
       optionB: "ヒザ"
     },
-    // {
-    //   imageUrl: "path/to/image2.jpg",
-    //   correctOption: 'B',
-    //   optionA: "バナナ",
-    //   optionB: "サル"
-    // },
-    // {
-    //   imageUrl: "path/to/image2.jpg",
-    //   correctOption: 'B',
-    //   optionA: "バナナ",
-    //   optionB: "サル"
-    // },
+    {
+      imageUrl: "/q7.jpeg",
+      correctOption: 'B',
+      optionA: "ピザ",
+      optionB: "ビザ"
+    },
+    {
+      imageUrl: "/q8.jpeg",
+      correctOption: 'A',
+      optionA: "キザ",
+      optionB: "ヒザ"
+    },
+    {
+      imageUrl: "/q4.webp",
+      correctOption: 'A',
+      optionA: "フリーザ",
+      optionB: "ピザーラ"
+    },
+    {
+      imageUrl: "/q6.png",
+      correctOption: 'B',
+      optionA: "ピイザ",
+      optionB: "パイザ"
+    },
+    {
+      imageUrl: "/q5.jpeg",
+      correctOption: 'A',
+      optionA: "ヒダ",
+      optionB: "キザ"
+    },
+    {
+      imageUrl: "/q9.png",
+      correctOption: 'A',
+      optionA: "上座",
+      optionB: "上野"
+    },
 
   ];
 
@@ -118,13 +142,12 @@ export function GameLayout() {
         // 正解不正解の判定を削除し、ボタンをクリック可能にする
         setTimeout(() => {
           setCurrentQuestion(currentQuestion + 1); // 次の問題に進む
-          setTimer(5); // タイマーリセット
+          setTimer(3); // タイマーリセット
           setIsCorrect(null);
           setIsDisabled(false);
         }, 750);
       } else {
         setGameCompleted(true); // 全問正解でゲーム終了
-        setTimer(5); // タイマーリセット
       }
     } else {
       setGameOver(true); // 不正解でゲーム終了
@@ -142,7 +165,7 @@ export function GameLayout() {
           <Typography variant='h5'>やーいひっかかった！</Typography>
           <Box sx={styleForQuizFailure}></Box>
           <Typography variant='h5'>正解数：{correctCount}問</Typography>
-          <Button onClick={()=> navigate('/')} >もう一度！</Button>
+          <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
           <Button onClick={handleModalOpen}>ランキング登録</Button>
         </Box>
       ) : (
@@ -152,7 +175,7 @@ export function GameLayout() {
               <Typography variant='h5'>全問正解🎉 ({correctCount}問正解)</Typography>
               <Box sx={styleForQuizCompleted}></Box>
               <Typography variant='h5'>やるじゃん</Typography>
-              <Button onClick={()=> navigate('/')} >もう一度！</Button>
+              <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
               <Button onClick={handleModalOpen}>ランキング登録</Button>
             </Box>
           ) : (
@@ -160,10 +183,10 @@ export function GameLayout() {
             <Box sx={styleForQuiz}>
               <Typography variant='h3' >これは？</Typography>
               <Box width="200px" height="200px" >
-                <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', objectFit: 'cover' }} />
               </Box>
               <Box >
-                {isCorrect === true && <Alert variant="outlined" severity="success" >正解！！！</Alert>}
+                {isCorrect === true && <Alert variant="filled" severity="success" >正解！！！</Alert>}
                 <Typography variant='h5'>残り時間：{timer}秒</Typography>
                 <Typography >正解数：{correctCount}問</Typography>
               </Box>

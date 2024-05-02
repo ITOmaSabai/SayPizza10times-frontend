@@ -50,7 +50,7 @@ const styleForFooter = {
   backgroundBlendMode: "lighten",
 }
 
-export function QuizGame() {
+export function GameLayout() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [timer, setTimer] = useState(5); // 5秒制限
   const [gameOver, setGameOver] = useState(false);

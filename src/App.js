@@ -1,15 +1,11 @@
-import logo from './logo.svg';
-// import './App.css';
-import { HeroLayout } from './components/layouts/HeroLayout';
-import QuizGame from './components/layouts/GameLayout';
+import { AppProvider } from './providers/app';
+import { AppRoutes } from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <QuizGame />
-      </header>
-    </div>
+    <AppProvider >
+      <AppRoutes />
+    </AppProvider>
   );
 }
 

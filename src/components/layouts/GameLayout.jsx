@@ -186,7 +186,7 @@ export function GameLayout() {
                 <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', objectFit: 'cover' }} />
               </Box>
               <Box >
-                {isCorrect === true && <Alert variant="outlined" severity="success" >正解！！！</Alert>}
+                {isCorrect === true && <Alert variant="filled" severity="success" >正解！！！</Alert>}
                 <Typography variant='h5'>残り時間：{timer}秒</Typography>
                 <Typography >正解数：{correctCount}問</Typography>
               </Box>

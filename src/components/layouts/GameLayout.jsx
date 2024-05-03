@@ -221,9 +221,9 @@ export function GameLayout() {
         // 正解不正解の判定を削除し、ボタンをクリック可能にする
         setTimeout(() => {
           setCurrentQuestion(currentQuestion + 1); // 次の問題に進む
-          setTimer(3); // タイマーリセット
-          setIsCorrect(null);
-          setIsDisabled(false);
+          // setTimer(3); // タイマーリセット
+          // setIsCorrect(null);
+          // setIsDisabled(false);
         }, 750);
       } else {
         setGameCompleted(true); // 全問正解でゲーム終了
@@ -232,6 +232,12 @@ export function GameLayout() {
       setGameOver(true); // 不正解でゲーム終了
     }
   };
+
+  const startTimer = () => {
+    setTimer(3); // タイマーリセット
+    setIsCorrect(null);
+    setIsDisabled(false);
+  }
 
   const handleClick = () => {
     if (correctCount < 4) {
@@ -273,11 +279,19 @@ export function GameLayout() {
               </Box>
             </Box>
           ) : (
-            // <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh", backgroundImage: "url('/smile.png')"}}>
             <Box sx={styleForQuiz}>
               <Typography variant='h3' >これは？</Typography>
               <Box width="200px" height="200px" >
-                <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', height: "200px", objectFit: 'contain' }} />
+                <img
+                  src={questions[currentQuestion].imageUrl}
+                  alt="問題の画像"
+                  style={{
+                    width: '100%',
+                    height: "200px",
+                    objectFit: 'contain'
+                  }}
+                  onLoad={startTimer}
+                />
               </Box>
               <Box >
                 {isCorrect === true && <Alert variant="filled" severity="success" >正解！！！</Alert>}

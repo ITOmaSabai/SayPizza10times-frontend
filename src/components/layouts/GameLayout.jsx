@@ -63,12 +63,14 @@ export function GameLayout() {
 
   const questions = [
     {
+      // Q.1
       imageUrl: "/q1.webp",
       correctOption: 'B',
       optionA: "ヒザ",
-      optionB: "ヒジ"
+      optionB: "ヒジ",
     },
     {
+      // Q.2
       imageUrl: "/q3.jpeg",
       correctOption: 'A',
       optionA: "ヒザ",
@@ -84,19 +86,22 @@ export function GameLayout() {
       imageUrl: "/q7.jpeg",
       correctOption: 'B',
       optionA: "ピザ",
-      optionB: "ビザ"
+      optionB: "ビザ",
+      credit: "53期ミッツ"
     },
     {
       imageUrl: "/q8.jpeg",
       correctOption: 'A',
       optionA: "キザ",
-      optionB: "ヒザ"
+      optionB: "ヒザ",
+      credit: "53期ミッツ"
     },
     {
       imageUrl: "/q4.webp",
       correctOption: 'A',
       optionA: "フリーザ",
-      optionB: "ピザーラ"
+      optionB: "ピザーラ",
+      credit: "53期ミッツ"
     },
     {
       imageUrl: "/q6.png",
@@ -108,13 +113,87 @@ export function GameLayout() {
       imageUrl: "/q5.jpeg",
       correctOption: 'A',
       optionA: "ヒダ",
-      optionB: "キザ"
+      optionB: "キザ",
+      credit: "53期ミッツ"
     },
     {
       imageUrl: "/q9.png",
       correctOption: 'A',
       optionA: "上座",
-      optionB: "上野"
+      optionB: "上野",
+      credit: "53期ミッツ"
+    },
+    {
+      // Q.10
+      imageUrl: "/q10.jpeg",
+      correctOption: 'A',
+      optionA: "キンサ",
+      optionB: "タイサ"
+    },
+    {
+      imageUrl: "/q11.png",
+      correctOption: 'B',
+      optionA: "トンザ",
+      optionB: "チンザ",
+      credit: "52期きょうへい"
+    },
+    {
+      imageUrl: "/q12.jpeg",
+      correctOption: 'B',
+      optionA: "センサ",
+      optionB: "ベンザ"
+    },
+    {
+      imageUrl: "/q13.png",
+      correctOption: 'A',
+      optionA: "サソリザ",
+      optionB: "オウシザ"
+    },
+    {
+      imageUrl: "/q14.jpeg",
+      correctOption: 'B',
+      optionA: "モリノザ",
+      optionB: "モナリザ"
+    },
+    {
+      imageUrl: "/q15.jpeg",
+      correctOption: 'A',
+      optionA: "ミョウガ",
+      optionB: "ショウガ"
+    },
+    {
+      // Q.16
+      imageUrl: "/q16.webp",
+      correctOption: 'B',
+      optionA: "オッカケ",
+      optionB: "ファンサ"
+    },
+    {
+      imageUrl: "/q17.jpeg",
+      correctOption: 'A',
+      optionA: "スピノザ",
+      optionB: "パスカル"
+    },
+    {
+      imageUrl: "/q18.jpeg",
+      correctOption: 'A',
+      optionA: "ファンザ",
+      optionB: "ファンサ"
+    },
+    {
+      imageUrl: "/q19.jpeg",
+      correctOption: 'B',
+      optionA: "ロンドン",
+      optionB: "ギンザ",
+      credit: "52期きょうへい"
+
+    },
+    {
+      // Q.20
+      imageUrl: "/q20.jpeg",
+      correctOption: 'A',
+      optionA: "ラクチンベンザ",
+      optionB: "ラクイチラクザ"
     },
 
   ];
@@ -159,8 +238,12 @@ export function GameLayout() {
       window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！やーいやーいw%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     } else if (correctCount < 9) {
       window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！なかなかやるね！😜%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+    } else if (correctCount < 16) {
+      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！本気出していいんだぞ？🤗%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+    } else if (correctCount < 20) {
+      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！もうちょっとだったのに残念だなぁ🤷‍♂️%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     } else {
-      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問全問正解！天才かよ！？👀%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問全問正解！やるじゃん、でももっと有益な時間の使い方あったんじゃない？😁%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     }
   }
 
@@ -194,7 +277,7 @@ export function GameLayout() {
             <Box sx={styleForQuiz}>
               <Typography variant='h3' >これは？</Typography>
               <Box width="200px" height="200px" >
-                <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', objectFit: 'cover' }} />
+                <img src={questions[currentQuestion].imageUrl} alt="問題の画像" style={{ width: '100%', height: "200px", objectFit: 'contain' }} />
               </Box>
               <Box >
                 {isCorrect === true && <Alert variant="filled" severity="success" >正解！！！</Alert>}
@@ -241,6 +324,7 @@ export function GameLayout() {
                   </Typography>
                 </Button>
               </Box>
+              {questions[currentQuestion].credit && <Typography sx={{pt: 1}} >提供：{questions[currentQuestion].credit}さん</Typography>}
             </Box>
           )}
         </>

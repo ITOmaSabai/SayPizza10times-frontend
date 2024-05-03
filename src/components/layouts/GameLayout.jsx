@@ -191,7 +191,7 @@ export function GameLayout() {
     {
       // Q.20
       imageUrl: "/q20.jpeg",
-      correctOption: 'A',
+      correctOption: 'B',
       optionA: "ラクチンベンザ",
       optionB: "ラクイチラクザ"
     },
@@ -298,7 +298,7 @@ export function GameLayout() {
                       fontSize: {
                         xs: '1.5rem', // xsサイズの画面で1remに
                         sm: '1.5rem', // smサイズの画面で1.5remに
-                        md: '2.125rem', // mdサイズの画面でh4のデフォルトサイズに
+                        md: '1.5rem', // mdサイズの画面でh4のデフォルトサイズに
                       }
                     }}
                   >
@@ -316,7 +316,7 @@ export function GameLayout() {
                       fontSize: {
                         xs: '1.5rem', // xsサイズの画面で1remに
                         sm: '1.5rem', // smサイズの画面で1.5remに
-                        md: '2.125rem', // mdサイズの画面でh4のデフォルトサイズに
+                        md: '1.5rem', // mdサイズの画面でh4のデフォルトサイズに
                       }
                     }}
                   >

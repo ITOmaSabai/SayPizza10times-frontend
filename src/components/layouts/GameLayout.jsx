@@ -202,26 +202,45 @@ export function GameLayout() {
                 <Typography >正解数：{correctCount}問</Typography>
               </Box>
 
-              <Box sx={{pt: 5}} >
+              <Box sx={{pt: 5, display: 'flex', flexWrap: 'nowrap'}}  >
                 <Button
                   variant='contained'
                   onClick={() => handleOptionClick('A')}
-                  sx={{mr: 1}}
+                  sx={{mr: 1, width: "150px"}}
                   color='error'
                   disabled={isDisabled}
                 >
-                  <Typography variant='h4' >{questions[currentQuestion].optionA}</Typography>
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        xs: '1.5rem', // xsサイズの画面で1remに
+                        sm: '1.5rem', // smサイズの画面で1.5remに
+                        md: '2.125rem', // mdサイズの画面でh4のデフォルトサイズに
+                      }
+                    }}
+                  >
+                    {questions[currentQuestion].optionA}
+                  </Typography>
                 </Button>
                 <Button
                   variant='contained'
                   onClick={() => handleOptionClick('B')}
+                  sx={{width: "150px"}}
                   disabled={isDisabled}
                 >
-                  <Typography variant='h4' >{questions[currentQuestion].optionB}</Typography>
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        xs: '1.5rem', // xsサイズの画面で1remに
+                        sm: '1.5rem', // smサイズの画面で1.5remに
+                        md: '2.125rem', // mdサイズの画面でh4のデフォルトサイズに
+                      }
+                    }}
+                  >
+                    {questions[currentQuestion].optionB}
+                  </Typography>
                 </Button>
               </Box>
-              {/* <Box sx={styleForFooter} ></Box> */}
-                {/* <img src='/smile.png' height="100px" /> */}
             </Box>
           )}
         </>

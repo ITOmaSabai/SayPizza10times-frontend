@@ -171,8 +171,10 @@ export function GameLayout() {
           <Typography variant='h5'>やーいひっかかった！</Typography>
           <Box sx={styleForQuizFailure}></Box>
           <Typography variant='h5'>正解数：{correctCount}問</Typography>
-          <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
-          <Button onClick={handleClick} >Xにポストする</Button>
+          <Box sx={{pt: 1}} >
+            <Button onClick={handleClick} >Xにポストする</Button>
+            <Button variant="contained" onClick={()=> navigate('/')} sx={{mb: 1}} ><Typography fontSize="22px" >もう一度！</Typography></Button>
+          </Box>
 
         </Box>
       ) : (
@@ -182,8 +184,10 @@ export function GameLayout() {
               <Typography variant='h5'>全問正解🎉 ({correctCount}問正解)</Typography>
               <Box sx={styleForQuizCompleted}></Box>
               <Typography variant='h5'>やるじゃん</Typography>
-              <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
-              <Button onClick={handleClick} >Xにポストする</Button>
+              <Box sx={{pt: 1}} >
+                <Button onClick={handleClick} >Xにポストする</Button>
+                <Button variant="contained" onClick={()=> navigate('/')} sx={{mb: 1}} ><Typography fontSize="22px" >もう一度！</Typography></Button>
+              </Box>
             </Box>
           ) : (
             // <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh", backgroundImage: "url('/smile.png')"}}>

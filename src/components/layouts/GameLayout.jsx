@@ -221,9 +221,6 @@ export function GameLayout() {
         // 正解不正解の判定を削除し、ボタンをクリック可能にする
         setTimeout(() => {
           setCurrentQuestion(currentQuestion + 1); // 次の問題に進む
-          // setTimer(3); // タイマーリセット
-          // setIsCorrect(null);
-          // setIsDisabled(false);
         }, 750);
       } else {
         setGameCompleted(true); // 全問正解でゲーム終了

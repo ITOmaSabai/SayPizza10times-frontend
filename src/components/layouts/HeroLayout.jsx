@@ -35,7 +35,7 @@ export const HeroLayout = () => {
       <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "90vh", width: "320px", pt: 2}} >
         <Typography variant="h3" fontWeight="bold" >ピザって10回</Typography>
         <Typography variant="h3" fontWeight="bold" >言って？</Typography>
-        <Typography fontSize="12px" >(ボタンを押してください)</Typography>
+        <Typography fontSize="12px" >(ボタンを10回押してください)</Typography>
           <Box sx={styleForBgImage} >
             <Box sx={{bgcolor: "rgba(255,255,255,0.3)"}} >
             </Box>

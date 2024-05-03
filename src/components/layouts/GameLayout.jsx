@@ -53,12 +53,12 @@ const styleForFooter = {
 
 export function GameLayout() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [timer, setTimer] = useState(3); // 5秒制限
+  const [timer, setTimer] = useState(3);
   const [gameOver, setGameOver] = useState(false);
-  const [gameCompleted, setGameCompleted] = useState(false);
+  const [gameCompleted, setGameCompleted] = useState(null);
   const [ correctCount, setCorrectCount ] = useState(0);
-  const [ isCorrect, setIsCorrect ] = useState(null);
-  const [ isDisabled, setIsDisabled ] = useState(false);
+  const [ isCorrect, setIsCorrect ] = useState(false);
+  const [ isDisabled, setIsDisabled ] = useState(true);
   const navigate = useNavigate();
 
   const questions = [
@@ -199,13 +199,16 @@ export function GameLayout() {
   ];
 
   useEffect(() => {
-    if (!gameCompleted || !isCorrect) {
+    if (gameCompleted === false || isCorrect === null) {
       if(timer > 0) {
         const id = setTimeout(() => setTimer(timer - 1), 1000);
         return () => clearTimeout(id);
       } else {
         setGameOver(true); // 制限時間超過でゲーム終了
       }
+    } else {
+      const id = setTimeout(() => setTimer(timer), 1000);
+      return () => clearTimeout(id);
     }
   }, [timer, gameCompleted, isCorrect]);
 
@@ -216,11 +219,14 @@ export function GameLayout() {
       setCorrectCount(correctCount + 1);
       setIsCorrect(true);
       setIsDisabled(true);
+      setGameCompleted(null);
       // 残りの問題があれば、次の問題に進む
       if (currentQuestion < questions.length - 1) {
         // 正解不正解の判定を削除し、ボタンをクリック可能にする
         setTimeout(() => {
           setCurrentQuestion(currentQuestion + 1); // 次の問題に進む
+          setIsCorrect(false);
+          setTimer(3); // タイマーリセット
         }, 750);
       } else {
         setGameCompleted(true); // 全問正解でゲーム終了
@@ -231,9 +237,9 @@ export function GameLayout() {
   };
 
   const startTimer = () => {
-    setTimer(3); // タイマーリセット
     setIsCorrect(null);
     setIsDisabled(false);
+    setGameCompleted(false);
   }
 
   const handleClick = () => {

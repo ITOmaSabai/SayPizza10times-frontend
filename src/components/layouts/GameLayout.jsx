@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const styleForQuizFailure = {
   backgroundImage: "url('/Hero.png')",
-  height: '100%',
-  width: "100%",
+  height: '70%',
+  width: "350px",
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -15,8 +15,8 @@ const styleForQuizFailure = {
 
 const styleForQuizCompleted = {
   backgroundImage: "url('/zannnensou.jpeg')",
-  height: '100%',
-  width: "100%",
+  height: '70%',
+  width: "350px",
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -171,8 +171,10 @@ export function GameLayout() {
           <Typography variant='h5'>やーいひっかかった！</Typography>
           <Box sx={styleForQuizFailure}></Box>
           <Typography variant='h5'>正解数：{correctCount}問</Typography>
-          <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
-          <Button onClick={handleClick} >Xにポストする</Button>
+          <Box sx={{pt: 1}} >
+            <Button onClick={handleClick} >Xにポストする</Button>
+            <Button variant="contained" onClick={()=> navigate('/')} sx={{mb: 1}} ><Typography fontSize="22px" >もう一度！</Typography></Button>
+          </Box>
 
         </Box>
       ) : (
@@ -182,8 +184,10 @@ export function GameLayout() {
               <Typography variant='h5'>全問正解🎉 ({correctCount}問正解)</Typography>
               <Box sx={styleForQuizCompleted}></Box>
               <Typography variant='h5'>やるじゃん</Typography>
-              <Button variant="contained" onClick={()=> navigate('/')} >もう一度！</Button>
-              <Button onClick={handleClick} >Xにポストする</Button>
+              <Box sx={{pt: 1}} >
+                <Button onClick={handleClick} >Xにポストする</Button>
+                <Button variant="contained" onClick={()=> navigate('/')} sx={{mb: 1}} ><Typography fontSize="22px" >もう一度！</Typography></Button>
+              </Box>
             </Box>
           ) : (
             // <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh", backgroundImage: "url('/smile.png')"}}>
@@ -198,26 +202,45 @@ export function GameLayout() {
                 <Typography >正解数：{correctCount}問</Typography>
               </Box>
 
-              <Box sx={{pt: 5}} >
+              <Box sx={{pt: 5, display: 'flex', flexWrap: 'nowrap'}}  >
                 <Button
                   variant='contained'
                   onClick={() => handleOptionClick('A')}
-                  sx={{mr: 1}}
+                  sx={{mr: 1, width: "150px"}}
                   color='error'
                   disabled={isDisabled}
                 >
-                  <Typography variant='h4' >{questions[currentQuestion].optionA}</Typography>
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        xs: '1.5rem', // xsサイズの画面で1remに
+                        sm: '1.5rem', // smサイズの画面で1.5remに
+                        md: '2.125rem', // mdサイズの画面でh4のデフォルトサイズに
+                      }
+                    }}
+                  >
+                    {questions[currentQuestion].optionA}
+                  </Typography>
                 </Button>
                 <Button
                   variant='contained'
                   onClick={() => handleOptionClick('B')}
+                  sx={{width: "150px"}}
                   disabled={isDisabled}
                 >
-                  <Typography variant='h4' >{questions[currentQuestion].optionB}</Typography>
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        xs: '1.5rem', // xsサイズの画面で1remに
+                        sm: '1.5rem', // smサイズの画面で1.5remに
+                        md: '2.125rem', // mdサイズの画面でh4のデフォルトサイズに
+                      }
+                    }}
+                  >
+                    {questions[currentQuestion].optionB}
+                  </Typography>
                 </Button>
               </Box>
-              {/* <Box sx={styleForFooter} ></Box> */}
-                {/* <img src='/smile.png' height="100px" /> */}
             </Box>
           )}
         </>

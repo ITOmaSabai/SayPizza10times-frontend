@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const styleForQuizFailure = {
   backgroundImage: "url('/Hero.png')",
-  height: '100%',
-  width: "100%",
+  height: '70%',
+  width: "350px",
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -15,8 +15,8 @@ const styleForQuizFailure = {
 
 const styleForQuizCompleted = {
   backgroundImage: "url('/zannnensou.jpeg')",
-  height: '100%',
-  width: "100%",
+  height: '70%',
+  width: "350px",
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',

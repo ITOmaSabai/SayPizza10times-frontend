@@ -244,15 +244,15 @@ export function GameLayout() {
 
   const handleClick = () => {
     if (correctCount < 4) {
-      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！やーいやーいw%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+      window.open(`https://twitter.com/intent/tweet?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！やーいやーいw%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     } else if (correctCount < 9) {
-      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！なかなかやるね！😜%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+      window.open(`https://twitter.com/intent/tweet?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！なかなかやるね！😜%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     } else if (correctCount < 16) {
-      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！本気出していいんだぞ？🤗%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+      window.open(`https://twitter.com/intent/tweet?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！本気出していいんだぞ？🤗%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     } else if (correctCount < 20) {
-      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！もうちょっとだったのに残念だなぁ🤷‍♂️%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+      window.open(`https://twitter.com/intent/tweet?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問正解！もうちょっとだったのに残念だなぁ🤷‍♂️%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     } else {
-      window.open(`https://twitter.com/share?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問全問正解！やるじゃん、でももっと有益な時間の使い方あったんじゃない？😁%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
+      window.open(`https://twitter.com/intent/tweet?url=https://saypizza10times.vercel.app &text=「ピザって10回言って？」${correctCount}問全問正解！やるじゃん、でももっと有益な時間の使い方あったんじゃない？😁%0a%0a&hashtags=SayPizza,ミニアプリweek`, '_blank');
     }
   }
 
